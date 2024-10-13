@@ -3,6 +3,8 @@ package com.fernandocanabarro.desafio_credpago.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fernandocanabarro.desafio_credpago.services.exceptions.ResourceNotFoundException;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -38,5 +40,15 @@ public class Cart {
     @OneToMany(mappedBy = "id.cart",fetch = FetchType.LAZY)
     private List<ProductCartItem> products = new ArrayList<>();
 
+    public void addProduct(ProductCartItem productCartItem){
+        products.add(productCartItem);
+    }
+
+    public void removeProduct(Product product){
+        boolean isRemoved = products.removeIf(productCartItem -> productCartItem.getProduct().getId().equals(product.getId()));
+        if (!isRemoved) {
+            throw new ResourceNotFoundException("O carrinho não contém o produto especificado");
+        }
+    }
 
 }

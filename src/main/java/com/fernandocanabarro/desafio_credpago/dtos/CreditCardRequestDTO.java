@@ -1,5 +1,6 @@
 package com.fernandocanabarro.desafio_credpago.dtos;
 
+import com.fernandocanabarro.desafio_credpago.services.validations.CreditCardRequestDTOValid;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -12,6 +13,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@CreditCardRequestDTOValid
 public class CreditCardRequestDTO {
 
     @NotBlank(message = "Campo Requerido")

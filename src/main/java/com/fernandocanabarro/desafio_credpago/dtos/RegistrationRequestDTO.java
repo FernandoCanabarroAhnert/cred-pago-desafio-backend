@@ -1,5 +1,6 @@
 package com.fernandocanabarro.desafio_credpago.dtos;
 
+import com.fernandocanabarro.desafio_credpago.services.validations.RegistrationRequestDTOValid;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -13,6 +14,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RegistrationRequestDTOValid
 public class RegistrationRequestDTO {
 
     @NotBlank(message = "Campo Requerido")
