@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fernandocanabarro.desafio_credpago.dtos.CreditCardRequestDTO;
 import com.fernandocanabarro.desafio_credpago.dtos.CreditCardResponseDTO;
+import com.fernandocanabarro.desafio_credpago.openapi.CreditCardControllerOpenAPI;
 import com.fernandocanabarro.desafio_credpago.services.CreditCardService;
 
 import jakarta.validation.Valid;
@@ -21,7 +22,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/store/api/v1/creditCards")
-public class CreditCardController {
+public class CreditCardController implements CreditCardControllerOpenAPI{
 
     @Autowired
     private CreditCardService service;

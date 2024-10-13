@@ -16,6 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.fernandocanabarro.desafio_credpago.dtos.TransactionHistoryDTO;
 import com.fernandocanabarro.desafio_credpago.dtos.TransactionRequestDTO;
 import com.fernandocanabarro.desafio_credpago.dtos.TransactionResponseDTO;
+import com.fernandocanabarro.desafio_credpago.openapi.TransactionControllerOpenAPI;
 import com.fernandocanabarro.desafio_credpago.services.TransactionService;
 
 import jakarta.validation.Valid;
@@ -24,7 +25,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/store/api/v1/transactions")
-public class TransactionController {
+public class TransactionController implements TransactionControllerOpenAPI{
 
     @Autowired
     private TransactionService service;

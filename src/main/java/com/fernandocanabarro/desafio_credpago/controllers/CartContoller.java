@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fernandocanabarro.desafio_credpago.dtos.CartDTO;
 import com.fernandocanabarro.desafio_credpago.dtos.ProductCartItemDTO;
+import com.fernandocanabarro.desafio_credpago.openapi.CartContollerOpenAPI;
 import com.fernandocanabarro.desafio_credpago.services.CartService;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/store/api/v1/carts")
-public class CartContoller {
+public class CartContoller implements CartContollerOpenAPI{
 
     @Autowired
     private CartService cartService;

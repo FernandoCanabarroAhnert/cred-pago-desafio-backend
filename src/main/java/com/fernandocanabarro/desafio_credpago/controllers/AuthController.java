@@ -15,13 +15,14 @@ import com.fernandocanabarro.desafio_credpago.dtos.LoginRequestDTO;
 import com.fernandocanabarro.desafio_credpago.dtos.LoginResponseDTO;
 import com.fernandocanabarro.desafio_credpago.dtos.RegistrationRequestDTO;
 import com.fernandocanabarro.desafio_credpago.dtos.UserDTO;
+import com.fernandocanabarro.desafio_credpago.openapi.AuthControllerOpenAPI;
 import com.fernandocanabarro.desafio_credpago.services.AuthService;
 
 import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/store/api/v1/auth")
-public class AuthController {
+public class AuthController implements AuthControllerOpenAPI{
 
     @Autowired
     private AuthService authService;

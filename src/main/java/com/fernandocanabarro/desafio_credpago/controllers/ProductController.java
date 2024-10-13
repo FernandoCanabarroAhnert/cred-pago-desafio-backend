@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.fernandocanabarro.desafio_credpago.dtos.ProductDTO;
+import com.fernandocanabarro.desafio_credpago.openapi.ProductControllerOpenAPI;
 import com.fernandocanabarro.desafio_credpago.services.ProductService;
 
 import jakarta.validation.Valid;
@@ -25,7 +26,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/store/api/v1/products")
-public class ProductController {
+public class ProductController implements ProductControllerOpenAPI{
 
     @Autowired
     private ProductService service;
