@@ -115,6 +115,61 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<configuration>
+					<skip>${surefire.skip}</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+		<configuration>
+			<excludes>
+						<exclude>com/fernandocanabarro/desafio_credpago/DesafioCredpagoApplication.class</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/config/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/entities/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/projections/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/dtos/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/controllers/exceptions/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/controllers/AuthController.class</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/services/exceptions/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/services/validations/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/utils/**</exclude>
+			</excludes>
+		</configuration>
+		<executions>
+			<execution>
+				<goals>
+					<goal>prepare-agent</goal>
+				</goals>
+			</execution>
+			<execution>
+				<id>report</id>
+				<phase>prepare-package</phase>
+				<goals>
+					<goal>report</goal>
+				</goals>
+			</execution>
+		</executions>
+		
+		</plugin>
 		</plugins>
 	</build>
 </project>
