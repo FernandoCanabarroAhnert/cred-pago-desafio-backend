@@ -157,6 +157,7 @@
 						<exclude>com/fernandocanabarro/desafio_credpago/services/exceptions/**</exclude>
 						<exclude>com/fernandocanabarro/desafio_credpago/services/validations/**</exclude>
 						<exclude>com/fernandocanabarro/desafio_credpago/utils/**</exclude>
+						<exclude>com/fernandocanabarro/desafio_credpago/openapi/**</exclude>
 			</excludes>
 		</configuration>
 		<executions>
