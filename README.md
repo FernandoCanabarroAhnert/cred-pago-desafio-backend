@@ -95,7 +95,7 @@ Alguns diferenciais que não foram solicitados no desafio:
 1.Clonar repositório git:
 
 ```text
-git clone https://github.com/FernandoCanabarroAhnert/credpago-desafio-backend.git
+git clone https://github.com/FernandoCanabarroAhnert/cred-pago-desafio-backend.git
 ```
 
 2.Instalar dependências.
